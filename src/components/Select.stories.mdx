@@ -1,0 +1,28 @@
+<!--- Checkbox.stories.mdx -->
+
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Select from "./Select.tsx";
+
+<Meta title='MDX/Select' argTypes={{ onChange: { action: 'changed' } }} />
+<!-- {/* <Meta title="MDX/Select" component={Select} /> */} -->
+
+# Checkbox
+
+With `MDX`, we can define a story for `Checkbox` right in the middle of our
+Markdown documentation.
+
+<!--- This is your Story template function, shown here in React -->
+
+export const Template = (args) => <Select {...args} />;
+
+<Canvas>
+  <Story
+    name="Unchecked"
+    args={{
+      value: "value",
+      options: ["value", "hoge", "morimori"],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

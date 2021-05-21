@@ -1,0 +1,26 @@
+<!--- Checkbox.stories.mdx -->
+
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import MyButton from "./MyButton.tsx";
+
+<Meta title="MDX/MyButton" component={MyButton} />
+
+# Checkbox
+
+With `MDX`, we can define a story for `Checkbox` right in the middle of our
+Markdown documentation.
+
+<!--- This is your Story template function, shown here in React -->
+
+export const Template = (args) => <MyButton {...args} />;
+
+<Canvas>
+  <Story
+    name="Unchecked"
+    args={{
+      theme: "primary",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
